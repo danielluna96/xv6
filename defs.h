@@ -120,6 +120,8 @@ void            userinit(void);
 int             wait(void);
 void            wakeup(void*);
 void            yield(void);
+int				conteo(void); //Debido a que se agrega la función conteo en proc.c aquí se coloca la función conteo y que tipo de variable recibe.
+int				contar(int); //Debido a que se agrega la función contar en proc.c aquí se coloca la función contar y que tipo de variable recibe.
 
 // swtch.S
 void            swtch(struct context**, struct context*);

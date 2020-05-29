@@ -20,3 +20,6 @@
 #define SYS_link   19
 #define SYS_mkdir  20
 #define SYS_close  21
+#define SYS_conteo 22 //Conteo
+#define SYS_date   23 //Date
+#define SYS_contar 24 //Contar

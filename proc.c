@@ -15,6 +15,8 @@ struct {
 static struct proc *initproc;
 
 int nextpid = 1;
+int totalCalls = 0;  //Se inicializa la variable que guardara la cantidad de llamadas al sistema
+int arrayCalls[24]; //Se inicializa el arreglo de Llamadas en 24 valores que son la cantidad de llamadas al sistema que existen
 extern void forkret(void);
 extern void trapret(void);
 
@@ -531,4 +533,53 @@ procdump(void)
     }
     cprintf("\n");
   }
+}
+
+int
+conteo(void)  //Funcion conteo
+{
+	cprintf("El total de llamadas realizadas al sistema ha sido: %d.\n", totalCalls);
+	return 22;
+}
+
+int
+contar(int sid)  //Funcion contar
+{
+	char nombres[24][8] = {
+		"fork",
+		"exit",
+		"wait",
+		"pipe",
+		"read",
+		"kill",
+		"exec",
+		"fstat",
+		"chdir",
+		"dup",
+		"getpid",
+		"sbrk",
+		"sleep",
+		"uptime",
+		"open",
+		"write",
+		"mknod",
+		"unlink",
+		"link",
+		"mkdir",
+		"close",
+		"conteo",
+		"date",
+		"contar"
+	};
+	if(sid != 0){
+		int num = sid - 1;
+		cprintf("%d. La llamada de sistema: %s se ha ejecutado: %d veces.\n", num + 1,nombres + num, arrayCalls[num]);	
+	}else{
+		int i;
+		for(i=0; i<24; i++){
+			cprintf("%d. La llamada de sistema: %s ha sido ejecutada: %d veces.\n", i + 1, nombres + i, arrayCalls[i]);
+		}
+	}
+	return 24;
+	
 }

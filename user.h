@@ -23,6 +23,9 @@ int getpid(void);
 char* sbrk(int);
 int sleep(int);
 int uptime(void);
+int conteo(void); //Función conteo
+int contar(int); //Función contar
+int date(struct rtcdate*); //Función date
 
 // ulib.c
 int stat(const char*, struct stat*);

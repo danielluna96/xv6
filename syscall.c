@@ -103,6 +103,11 @@ extern int sys_unlink(void);
 extern int sys_wait(void);
 extern int sys_write(void);
 extern int sys_uptime(void);
+extern int sys_conteo(void); //conteo
+extern int sys_date(void); // date
+extern int sys_contar(void); //Contar
+extern int totalCalls; //Variable para conteo
+extern int arrayCalls[]; //Variable para contar
 
 static int (*syscalls[])(void) = {
 [SYS_fork]    sys_fork,
@@ -126,15 +131,21 @@ static int (*syscalls[])(void) = {
 [SYS_link]    sys_link,
 [SYS_mkdir]   sys_mkdir,
 [SYS_close]   sys_close,
+[SYS_conteo]   sys_conteo, //Llamada de sistema correspondiente a la función conteo
+[SYS_date]	  sys_date, // Llamada al sistema de date
+[SYS_contar]  sys_contar, //Llamada de sistema correspondiente a la función contar
 };
 
 void
 syscall(void)
 {
   int num;
+  int numedit;
   struct proc *curproc = myproc();
-
   num = curproc->tf->eax;
+  numedit = num - 1; //Debido a que cada llamada al sistema tiene su número, decido aprovechar ese número y restarle uno para asignarlo como posición dentro del arreglo arraycalls
+  totalCalls++; //Sumo en uno el total de llamadas al sistema que han ocurrido
+  arrayCalls[numedit] = arrayCalls[numedit] + 1; //Sumo en uno la cantidad de llamadas que ha tenido la llamada en numedit
   if(num > 0 && num < NELEM(syscalls) && syscalls[num]) {
     curproc->tf->eax = syscalls[num]();
   } else {

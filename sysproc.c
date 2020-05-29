@@ -89,3 +89,29 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+//Cuando se ejecuta la llamada al sistema conteo, se ejecuta la función conteo 
+int
+sys_conteo(void)
+{
+	return conteo();
+}
+
+int sys_date(void) //Cuando se ejecuta la llamada al sistema fecha, se pone el cmostime a la variable r
+{
+    struct rtcdate *r;
+    if(argptr(0, (void*)&r, sizeof(r)) < 0)
+    return -1;
+    cmostime(r);
+    return 0;
+}
+
+//Cuando se ejecuta la llamada al sistema contar, se ejecuta la función contar con el valor del sid(que es el nombre que le dí para system call id)
+int
+sys_contar(void)
+{
+  int sid;
+  if(argint(0, &sid) < 0)
+    return -1;
+  return contar(sid);
+}
