@@ -12,10 +12,10 @@ Puntos:
 
 
 Anotaciones:
--Se realizó el fork desde la cuenta de DanielTarazona para evidenciar el proyecto en su cuenta.
--Al realizar las pruebas del uptime se evidencia la diferencia de resultados de un equipo a otro, se realizan pruebas en un "MacBook Pro15, 1 2019 6 Core  Intel i7" y en un "equipo con procesador amd ryzen 5 2600".
+1. Se realizó el fork desde la cuenta de DanielTarazona para evidenciar el proyecto en su cuenta.
+2. Al realizar las pruebas del uptime se evidencia la diferencia de resultados de un equipo a otro, se realizan pruebas en un "MacBook Pro15, 1 2019 6 Core  Intel i7" y en un "equipo con procesador amd ryzen 5 2600".
 
 
 Estudiantes: 
--Daniel Fernando Luna Sanchez (Código 201727654)
--Daniel Felipe Tarazona Vasquez (Código 201743947)
+1. Daniel Fernando Luna Sanchez (Código 201727654)
+2. Daniel Felipe Tarazona Vasquez (Código 201743947)
