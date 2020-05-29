@@ -1,0 +1,7 @@
+Esta es la versión sin modificaciones del XV6 creado por el MIT, los cambios realizados se encontraran en la rama resuelto.
+
+Para correr debe ejecutar primero "make", y luego "make qemu-nox"
+
+Estudiantes: 
+Daniel Fernando Luna Sanchez Código 201727654
+Daniel Felipe Tarazona Vasquez Código 201743947
