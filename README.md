@@ -1,8 +1,8 @@
 Esta es la versión con modificaciones del XV6, en las modificaciones se realizan los puntos del "Proyecto Final De Sistemas Operativos".
 
 Intrucciones:
-Para correr, debe clonar o descargar el repositorio, posteriormente ejecutar el comando "make", y luego "make qemu-nox".
-Para visualizar los cambios puede ir al commit "Puntos Resueltos" de la rama "resuelto" y ver los cambios respecto al XV6 original.
+1. Para correr, debe clonar o descargar el repositorio, posteriormente ejecutar el comando "make", y luego "make qemu-nox".
+2. Para visualizar los cambios puede ir al commit "Puntos Resueltos" de la rama "resuelto" y ver los cambios respecto al XV6 original.
 
 Puntos:
 1. El primer punto esta resuelto en el comando/llamada de sistema "conteo".
